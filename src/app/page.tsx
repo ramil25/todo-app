@@ -76,7 +76,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Todo App</h1>
-          <p className="text-gray-600">Manage your tasks with due date notifications</p>
+          <p className="text-gray-700">Manage your tasks with due date notifications</p>
         </header>
 
         {error && (
@@ -100,7 +100,7 @@ export default function Home() {
                   Pending Tasks ({pendingTodos.length})
                 </h2>
                 {pendingTodos.length === 0 ? (
-                  <p className="text-gray-500 text-center py-8">
+                  <p className="text-gray-700 text-center py-8">
                     No pending tasks. Add a new todo to get started!
                   </p>
                 ) : (

@@ -56,7 +56,7 @@ export function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
 
     const dueDate = new Date(todo.due_date);
     
-    let className = 'text-gray-600';
+    let className = 'text-gray-700';
     let icon = Calendar;
     
     if (isPast(dueDate) && !todo.completed) {
@@ -149,12 +149,12 @@ export function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
         </button>
 
         <div className="flex-1 min-w-0">
-          <h3 className={`font-medium ${todo.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
+          <h3 className={`font-medium ${todo.completed ? 'line-through text-gray-600' : 'text-gray-900'}`}>
             {todo.title}
           </h3>
           
           {todo.description && (
-            <p className={`mt-1 text-sm ${todo.completed ? 'line-through text-gray-400' : 'text-gray-600'}`}>
+            <p className={`mt-1 text-sm ${todo.completed ? 'line-through text-gray-600' : 'text-gray-700'}`}>
               {todo.description}
             </p>
           )}
@@ -163,7 +163,7 @@ export function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
             {getDueDateDisplay()}
           </div>
           
-          <div className="mt-2 text-xs text-gray-400">
+          <div className="mt-2 text-xs text-gray-600">
             Created {format(new Date(todo.created_at), 'MMM d, yyyy')}
           </div>
         </div>
@@ -171,13 +171,13 @@ export function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
         <div className="flex space-x-2">
           <button
             onClick={handleEdit}
-            className="p-1 text-gray-400 hover:text-blue-600"
+            className="p-1 text-gray-600 hover:text-blue-600"
           >
             <Edit2 className="w-4 h-4" />
           </button>
           <button
             onClick={() => onDelete(todo.id)}
-            className="p-1 text-gray-400 hover:text-red-600"
+            className="p-1 text-gray-600 hover:text-red-600"
           >
             <Trash2 className="w-4 h-4" />
           </button>
