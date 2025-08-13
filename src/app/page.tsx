@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Todo, CreateTodo, UpdateTodo } from '@/lib/database';
+import { Todo, CreateTodo, UpdateTodo } from '@/lib/localStorage';
 import { fetchTodos, createTodo, updateTodo, deleteTodo, fetchDueSoonTodos } from '@/lib/api';
 import { TodoForm } from '@/components/TodoForm';
 import { TodoItem } from '@/components/TodoItem';

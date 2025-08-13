@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
-import { CreateTodo } from '@/lib/database';
+import { CreateTodo } from '@/lib/localStorage';
 
 interface TodoFormProps {
   onSubmit: (todo: CreateTodo) => void;
