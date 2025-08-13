@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Check, Trash2, Edit2, X, Save, Calendar, Clock } from 'lucide-react';
 import { format, isToday, isTomorrow, isPast } from 'date-fns';
-import { Todo, UpdateTodo } from '@/lib/database';
+import { Todo, UpdateTodo } from '@/lib/localStorage';
 
 interface TodoItemProps {
   todo: Todo;

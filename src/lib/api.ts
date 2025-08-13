@@ -1,61 +1,66 @@
-import { Todo, CreateTodo, UpdateTodo } from './database';
+import { Todo, CreateTodo, UpdateTodo, localStorageDb } from './localStorage';
 
-const API_BASE = '/api/todos';
-
+// Client-side API implementation using localStorage for static deployment
 export async function fetchTodos(): Promise<Todo[]> {
-  const response = await fetch(API_BASE);
-  if (!response.ok) {
-    throw new Error('Failed to fetch todos');
-  }
-  return response.json();
+  // Simulate async behavior
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(localStorageDb.getAllTodos());
+    }, 100);
+  });
 }
 
 export async function createTodo(todo: CreateTodo): Promise<Todo> {
-  const response = await fetch(API_BASE, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(todo),
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        const newTodo = localStorageDb.createTodo(todo);
+        resolve(newTodo);
+      } catch {
+        reject(new Error('Failed to create todo'));
+      }
+    }, 100);
   });
-  
-  if (!response.ok) {
-    throw new Error('Failed to create todo');
-  }
-  
-  return response.json();
 }
 
 export async function updateTodo(id: number, updates: UpdateTodo): Promise<Todo> {
-  const response = await fetch(`${API_BASE}/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(updates),
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        const updatedTodo = localStorageDb.updateTodo(id, updates);
+        if (!updatedTodo) {
+          reject(new Error('Todo not found'));
+          return;
+        }
+        resolve(updatedTodo);
+      } catch {
+        reject(new Error('Failed to update todo'));
+      }
+    }, 100);
   });
-  
-  if (!response.ok) {
-    throw new Error('Failed to update todo');
-  }
-  
-  return response.json();
 }
 
 export async function deleteTodo(id: number): Promise<void> {
-  const response = await fetch(`${API_BASE}/${id}`, {
-    method: 'DELETE',
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        const success = localStorageDb.deleteTodo(id);
+        if (!success) {
+          reject(new Error('Todo not found'));
+          return;
+        }
+        resolve();
+      } catch {
+        reject(new Error('Failed to delete todo'));
+      }
+    }, 100);
   });
-  
-  if (!response.ok) {
-    throw new Error('Failed to delete todo');
-  }
 }
 
 export async function fetchDueSoonTodos(): Promise<Todo[]> {
-  const response = await fetch(`${API_BASE}/due-soon`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch due soon todos');
-  }
-  return response.json();
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(localStorageDb.getTodosDueSoon());
+    }, 100);
+  });
 }

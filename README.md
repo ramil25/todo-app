@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App
 
-## Getting Started
+A modern, responsive todo application built with Next.js, featuring due date notifications and localStorage persistence.
 
-First, run the development server:
+## 🌟 Features
 
+- ✅ Create, edit, delete, and complete todos
+- 📅 Set due dates for tasks
+- 🔔 Due date notifications (items due within 24 hours)
+- 💾 Persistent storage using localStorage
+- 📱 Responsive design with Tailwind CSS
+- ⚡ Static site deployment ready
+
+## 🚀 Live Demo
+
+The application is deployed on GitHub Pages: **[https://ramil25.github.io/todo-app/](https://ramil25.github.io/todo-app/)**
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 20 or higher
+- npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ramil25/todo-app.git
+cd todo-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This will create an optimized static build in the `out` directory, ready for deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Deployment
 
-## Deploy on Vercel
+The app is configured for static export and automatically deploys to GitHub Pages using GitHub Actions when changes are pushed to the main branch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Manual Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can also deploy the static build to any static hosting service:
+
+1. Build the application: `npm run build`
+2. Deploy the contents of the `out` directory
+
+## 🧪 Tech Stack
+
+- **Framework**: Next.js 15.4.6 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Date Handling**: date-fns
+- **Storage**: localStorage (client-side)
+- **Deployment**: GitHub Pages with GitHub Actions
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Main todo page
+│   └── globals.css         # Global styles
+├── components/
+│   ├── TodoForm.tsx        # Add new todo form
+│   ├── TodoItem.tsx        # Individual todo item
+│   └── NotificationPanel.tsx # Due date notifications
+└── lib/
+    ├── localStorage.ts     # Client-side data persistence
+    └── api.ts             # API abstraction layer
+```
+
+## ✨ Usage
+
+1. **Add a Todo**: Fill in the title, description (optional), and due date (optional) in the form
+2. **Complete a Todo**: Click the circle button to mark as complete
+3. **Edit a Todo**: Click the edit button to modify details
+4. **Delete a Todo**: Click the trash button to remove
+5. **Due Date Notifications**: Items due within 24 hours appear in the notification panel
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).

@@ -2,7 +2,7 @@
 
 import { Bell, Clock } from 'lucide-react';
 import { format, isToday, isTomorrow } from 'date-fns';
-import { Todo } from '@/lib/database';
+import { Todo } from '@/lib/localStorage';
 
 interface NotificationPanelProps {
   dueSoonTodos: Todo[];
