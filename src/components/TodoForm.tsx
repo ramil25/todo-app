@@ -39,7 +39,7 @@ export function TodoForm({ onSubmit, isLoading }: TodoFormProps) {
       
       <div className="space-y-4">
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="title" className="block text-sm font-medium text-gray-900 mb-1">
             Title *
           </label>
           <input
@@ -54,7 +54,7 @@ export function TodoForm({ onSubmit, isLoading }: TodoFormProps) {
         </div>
 
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-900 mb-1">
             Description
           </label>
           <textarea
@@ -68,7 +68,7 @@ export function TodoForm({ onSubmit, isLoading }: TodoFormProps) {
         </div>
 
         <div>
-          <label htmlFor="dueDate" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="dueDate" className="block text-sm font-medium text-gray-900 mb-1">
             Due Date
           </label>
           <input
